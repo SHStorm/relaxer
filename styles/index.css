@@ -1,0 +1,134 @@
+/* Custom reset */
+html {
+  height: 100%;
+  box-sizing: border-box;
+
+  font-size: 62.5%;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100%;
+
+  font-size: 1.6rem;
+}
+
+h1, h2, h3, h4, h5, h6, small, i, em, b, strong, input, button, kbd {
+  font: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+/* Main styles */
+:root {
+  /* fallback values */
+  --total-duration: 7.5s;
+  --breath-duration: calc(var(--total-duration) * 0.4);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+
+  background-color: #2c3e50;
+  background-image: url('/images/bg.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  margin: 5rem 0;
+
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.clock-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.clock {
+  position: relative;
+
+  animation: var(--breath-animation-duration) linear 1 var(--breath-animation) forwards;
+}
+
+.clock.breathe-in {
+  --breath-animation: breathe-in;
+  --breath-animation-duration: var(--breath-duration);
+}
+
+.clock.breathe-out {
+  --breath-animation: breathe-out;
+  --breath-animation-duration: var(--breath-duration);
+}
+
+.pointer {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: center bottom;
+  transform: translate(-50%, 0) rotate(0);
+}
+
+.pointer.rotating {
+  animation: var(--total-duration) linear infinite rotate;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, 0) rotate(0);
+  }
+
+  100% {
+    transform: translate(-50%, 0) rotate(360deg);
+  }
+}
+
+@keyframes breathe-in {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes breathe-out {
+  from {
+    transform: scale(1.2);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}

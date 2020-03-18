@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Relaxer</title>
+
+  <link rel="stylesheet" href="/styles/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="/scripts/index.js" defer></script>
+</head>
+<body>
+  <h1 class="title">Relaxer</h1>
+
+  <div class="clock-wrapper">
+    <div id="clock" class="clock">
+      <svg class="circle" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+        <circle cx="160" cy="160" r="160" fill="#010f1c"></circle>
+
+        <text id="instruction" x="50%" y="50%" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Breathe In!</text>
+
+        <circle cx="160" cy="160" r="155" fill="none" stroke-width="10" stroke="#51af9d" stroke-dasharray="389.36 584.04" stroke-dashoffset="243.35"></circle>
+        <circle cx="160" cy="160" r="155" fill="none" stroke-width="10" stroke="#ffffff" stroke-dasharray="194.68 778.72" stroke-dashoffset="-146.01"></circle>
+        <circle cx="160" cy="160" r="155" fill="none" stroke-width="10" stroke="#2d6158" stroke-dasharray="389.36 584.04" stroke-dashoffset="-340.69"></circle>
+      </svg>
+
+      <svg id="pointer" class="pointer" xmlns="http://www.w3.org/2000/svg" width="20" height="190" viewBox="0 0 20 190">
+        <circle cx="50%" cy="10" r="10" fill="#ffffff"></circle>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>
